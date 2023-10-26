@@ -26,12 +26,17 @@ db.products.aggregate([
 {$addFields:
 {Premium_Brand: { $cond: {if : {$gte:["$Price",100]}, then: true, else: false} }}}])
 
-//9_ 
-/*
-Write a MongoDB query to update the inserted records so that all records in your
-collection will have the field Sale_Price. Set sale price to be 20% discounted on the
-original price. For example, if original price is $100, sale price would be $80.
-*/
+//9_ add a new "Sale_Price" field to all records in the collection with the discounted price without altering the original "Price" field
+db.products.updateMany(
+  {},
+  [
+    {
+      $addFields: {
+        Sale_Price: { $multiply: ["$Price", 0.8] }
+      }
+    }
+  ]
+);
 
 
 //10_ Find all records with descriptions that include the word "large" and project the result to display only the Name and Description fields:
