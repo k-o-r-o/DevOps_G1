@@ -1,3 +1,4 @@
+
 // variable declaration
 import express from "express";
 import mongoose from "mongoose";
@@ -20,6 +21,8 @@ let productSchema = mongoose.Schema({
    Image: String,
    Description: String
 });
+
+// GET product requests
 
 // assign schema to a variable
 let Product = mongoose.model("Product", productSchema);
@@ -57,6 +60,28 @@ products.get('/images/:filename', (req, res) => {
 	Product.find(req.params.filename, function(err, response) {
       res.json(response);
 	  });
+});
+
+// OTHER requests
+
+// Based on the provided identifier, REPLACE the corresponding object in the MongoDB collection.
+products.put('/:id', (req, res) => {
+	//STUFF HERE
+});
+
+// Based on the provided identifier, DELETE the corresponding object in the MongoDB collection.
+products.delete('/:id', (req, res) => {
+	//STUFF HERE
+});
+
+// Based on the provided identifier, UPDATE the corresponding object’s FIELD in the MongoDB collection.
+products.patch('/:id/:field', (req, res) => {
+	//STUFF HERE
+});
+
+// Return a specified number of products after skipping the first skip items
+products.get('/Page/:skip/:limit', (req, res) => {
+	//STUFF HERE
 });
 
 // export route
