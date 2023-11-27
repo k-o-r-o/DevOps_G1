@@ -1,0 +1,24 @@
+{
+  "name": "devops_g1",
+  "version": "1.0.0",
+  "description": "Building a small web API using Node.js that accesses a MongoDB database and returns JSON objects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k-o-r-o/DevOps_G1.git"
+  },
+  "author": "Zac Bondy, Drake Landon, Zackary Rondeau, Joyce De Moura, Ty Lever",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k-o-r-o/DevOps_G1/issues"
+  },
+  "homepage": "https://github.com/k-o-r-o/DevOps_G1#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.1"
+  }
+}
