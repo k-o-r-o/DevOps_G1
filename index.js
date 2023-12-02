@@ -1,6 +1,7 @@
 // variable declaration
 import express from "express";
 import bodyParser from "body-parser";
+import multer from "multer";
 const app = express();
 
 // import product routes
